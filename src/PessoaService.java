@@ -2,6 +2,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
+import org.json.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +22,16 @@ public class PessoaService {
                 .uri(URI.create(url)).build(); 
             var response = Client.send(request, BodyHandlers.ofString());
             System.out.println(response.body());
+            
+            JSONObject raiz = new JSONObject(response.body()); //abstração, para facilitar o "organização"
+            JSONArray items = raiz.getJSONArray("items");
+        System.out.println (items);
+        JSONObject primeiro = items.getJSONObject(0);
+            System.out.println(primeiro);
+       String nome = primeiro.getString("nome");
+       System.out.println(nome);
+       
+       
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -30,6 +41,6 @@ public class PessoaService {
 
 
     /*public static void main(String[] args) {
-    System.out.println(Client);
+    System.out.printsssln(Client);
     }*/
 }

@@ -9,7 +9,8 @@ public class App {
         PessoaService service = new PessoaService(URL);
         service.listar();
         
-        //PessoaService service = new PessoaService();
+        //PessoaService service = new PessoaService() ss;
         //service.listar();
     }
 }
+

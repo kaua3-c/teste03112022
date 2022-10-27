@@ -1,7 +1,7 @@
 import lombok.Getter;
 import lombok.Setter;
 
-// javabean
+// sssjavabean
 // pojo: plain old java object
 @Getter
 @Setter
