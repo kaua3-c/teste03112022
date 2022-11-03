@@ -11,6 +11,11 @@ public class Pessoa {
     private int idade;
     private String hobby;
 
+
+@Override
+    public String toString(){
+        return String.format("nome: %s,", nome);
+    }
 public static void main(String[] args){
     Pessoa p = new Pessoa();
     p.setNome("Alfa");
